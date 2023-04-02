@@ -17,7 +17,7 @@ function App() {
     <div className="app-container">
       <TopPanel />
       <EditorSection />
-      <div>Test footer</div>
+      <div className="footer">by ennukee, contact me on Twitter (<a href="https://twitter.com/PriestismJP">@PriestismJP</a>) or on Discord (ennukee#0001) with any improvements or complaints</div>
     </div>
   );
 }

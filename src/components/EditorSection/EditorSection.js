@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 import { ControlsDialog } from './ControlsDialog';
 import './EditorSection.css';
+import { AppContext } from '../../context';
 
 const colorNumericConstants = [
   // Represents the color-code values for the syntax like ^0 ^1 ^2 ^3 and so on.
@@ -27,6 +28,7 @@ export default function EditorSection() {
   const [startingString,] = useState('This is a ^xf99999basic example ^7of what ^x9ff99fthe UI looks like');
   const [formattedValue, setFormattedValue] = useState()
   const [controlsDialogVisible, setControlsDialogVisible] = useState(false)
+  const { getColor, checkColorForKey } = useContext(AppContext)
   const editorRef = useRef()
   const displayRef = useRef()
 
@@ -94,7 +96,10 @@ export default function EditorSection() {
 
   const handleKeyDown = (event) => {
     if (event.ctrlKey) {
-
+      const color = getColor(event.key)
+      if (color) {
+        insertPobColorCode(color)
+      }
     }
   }
 
@@ -118,7 +123,9 @@ export default function EditorSection() {
       <div className="controls">
         <div className="color-controls">
           {nativePobColors.map(color => (
-            <div className="color-control" onMouseDown={(e) => handleColorControlClick(e, color)} style={{backgroundColor: `#${color}`}}/>
+            <div className="color-control" onMouseDown={(e) => handleColorControlClick(e, color)} style={{backgroundColor: `#${color}`}}>
+              <span>{checkColorForKey(color) ?? ''}</span>
+            </div>
           ))}
         </div>
         <div className="configure-hotkeys" onClick={openControlsDialog}>Configure Hotkeys</div>
@@ -158,13 +165,3 @@ export default function EditorSection() {
 
   //   return () => clearInterval(interval)
   // }, [editorRef])
-
-          /* <div
-          ref={editorRef}
-          className="editor unformatted"
-          contentEditable={true}
-          onInput={handleChange}
-          onScroll={handleEditablePanelScroll}
-        >
-          {startingString}
-        </div> */
