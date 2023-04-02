@@ -1,0 +1,11 @@
+
+.app-container {
+    display: grid;
+    width: 100vw;
+    height: 100%;
+
+    grid-auto-rows: 200px calc(100% - 250px) 50px;
+
+    background-image: url(/public/bg.jpg);
+    background-size: cover;
+}

@@ -1,0 +1,81 @@
+.controls-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    z-index: 1000;
+
+    display: none;
+
+    padding: 15px 30px 30px 30px;
+    background-color: #222;
+    color: #eee;
+
+    border-radius: 4px;
+    border: 1px solid #eee;
+    width: 425px;
+    
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.dialog-title {
+    font-size: 36px;
+}
+
+.dialog-subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+    word-wrap: normal;
+    text-align: center;
+}
+
+.controls-dialog.visible {
+    display: flex;
+}
+
+.color-list {
+    display: grid;
+
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-rows: auto;
+}
+
+.color-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.color-bubble {
+    border-radius: 100%;
+    border: 2px solid #eee;
+    width: 30px;
+    height: 30px;
+}
+
+.color-hotkey-input {
+    height: 20px;
+    width: 40px;
+}
+
+.close-button {
+    background-color: #eee;
+    color: #222;
+    border: 1px solid #222;
+    border-radius: 4px;
+    padding: 8px 50px;
+    margin-top: 12px;
+    transition: 0.33s all;
+}
+
+.close-button:hover {
+    background-color: #ccc;
+    transition: 0.33s all;
+    cursor: pointer;
+}

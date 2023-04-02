@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PoB Noter",
+  "name": "Path of Building Note Writer",
   "icons": [
     {
       "src": "favicon.ico",

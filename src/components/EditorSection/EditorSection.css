@@ -1,0 +1,105 @@
+.editor-section {
+    position: relative;
+    display: grid;
+    box-sizing: border-box;
+
+    grid-template-rows: 90px calc(100% - 90px);
+    /* gap: 10px; */
+}
+
+.editor-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    box-sizing: border-box;
+}
+
+.editor {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    color: white;
+    background-color: #444444;
+
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.formatted {
+    margin-right: 20px;
+}
+
+.unformatted {
+    margin-left: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 10px;
+
+    margin: 0 20px 10px 20px;
+}
+
+.color-controls {
+    display: grid;
+
+    grid-auto-columns: 30px;
+    grid-template-rows: repeat(2, 30px);
+    grid-auto-flow: column;
+
+    gap: 5px;
+}
+
+.configure-hotkeys {
+    color: #111;
+    background-color: #dfdfdf;
+
+    border-radius: 3px;
+    border: 1px solid #111;
+
+    height: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    transition: 0.33s all;
+}
+
+.configure-hotkeys:hover {
+    background-color: #cfcfcf;
+    cursor: pointer;
+
+    transition: 0.33s all;
+}
+
+.color-control {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 100px;
+    border: 2px solid #eee;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
